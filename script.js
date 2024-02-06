@@ -1,7 +1,6 @@
 const YOUTUBE_API_KEY = 'AIzaSyCHBumtJUZPMDbHVLiIxIlCfNChMjaUTGk';
-
+const movieTitle = document.getElementById('movieTitle').value;
 function searchMovie() {
-  const movieTitle = document.getElementById('movieTitle').value;
   if (movieTitle.trim() === '') alert('Please enter movie title');
   return;
 }
@@ -9,7 +8,6 @@ function searchMovie() {
 /* fetch a youtube video/trailer using the provided movie title
  from input*/
 function getYouTubeVideo() {
-  const movieTitle = document.getElementById('movieTitle').value;
   const YOUTUBE_ENDPOINT = `https://www.googleapis.com/youtube/v3/search?q=${movieTitle}&key=${YOUTUBE_API_KEY}`;
 
   if (!movieTitle || movieTitle.trim().length === 0) {

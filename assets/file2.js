@@ -27,3 +27,8 @@ function searchMovie() {
 function saveSearchResultstoLocalStorage(query, results) {
     localStorage.setItem(query, JSON.stringify(results));
 }
+
+function getSearchResultsFromLocalStorage(query) {
+    const cachedResults = localStorage.getItem(query);
+    return cachedResults ? JSON.parse(cachedResults) : null;
+}

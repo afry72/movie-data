@@ -4,34 +4,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Film Scouts</title>
-    <style>
-        body {
-            font-family: 'Times New Roman', Times, serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content;
-            center;
-            height: 100vh;
-        }
-
-        h1 {
-            margin-bottom: 20px;
-        }
-
-        #search-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-    </style>
+    <title>Film Scout</title>
 </head>
 
 <body>
+    <header>
 
+        <nav>
+            <a href="#search">Search</a>
+            <a href="#genres">Genres</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#info">Info</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Film Scout</h1>
+        <h2>Powered by OMDB and Google</h2>
+        <section>
+            <section id="search" class=" ">
+
+                <div class="searcharea">
+
+                    <div>
+                        <h3> </h3>
+                        <style>
+                            body {
+                                font-family: Arial, sans-serif;
+                                margin: 0;
+                                padding: 0;
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                justify-content: center;
+                                height: 100vh;
+                                background-color: #f4f4f4;
+                            }
+
+                            h1 {
+                                margin-bottom: 20px;
+                            }
+
+                            #search-container {
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                            }
+
+                            #search-input {
+                                width: 80%;
+                                padding: 10px;
+                                margin-bottom: 10px;
+                            }
+
+                            #search-button {
+                                padding: 10px;
+                                cursor: pointer;
+                            }
+
+                            #results-container {
+                                margin-top: 20px;
+                            }
+                        </style>
+
+                        <div id="search-container">
+                            <input type="text" id="search-input" placeholder="Enter a film name">
+
+                        </div>
+
+                        <div id="results-container"></div>
+
+                        <script>
+                            function searchMovies() {
+                                var searchTerm = document.getElementById('search-input').value;
+                                var resultsContainer = document.getElementById('results-container');
+                                // Perform movie search using searchTerm
+                                // Display the results in resultsContainer
+                                resultsContainer.innerHTML = "<p>Results for '" + searchTerm + "' will be displayed here.</p>";
+                            }
+                        </script>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+
+
+
+
+
+
+
+</body>
 </body>
 
 </html>

@@ -24,6 +24,25 @@ function searchMovie() {
         .catch(error => console.error('Error fetching data:', error));
 }
 
+function displaySearchResults(results) {
+
+}
+function handleSearch(event) {
+    event.preventDefault();
+    const query = document.getElementById('searchInput').value.trim();
+    if (query === ''){
+        return;
+    }
+    searchMovie(query)
+    .then(results => {
+        if (results){
+            displaySearchResults(results);
+        } else {
+
+        }
+    });
+}
+
 function saveSearchResultstoLocalStorage(query, results) {
     localStorage.setItem(query, JSON.stringify(results));
 }
@@ -32,3 +51,9 @@ function getSearchResultsFromLocalStorage(query) {
     const cachedResults = localStorage.getItem(query);
     return cachedResults ? JSON.parse(cachedResults) : null;
 }
+
+function init() {
+    const searchForm = document.getElementById('searchForm');
+    searchForm.addEventListener('submit', handleSearch);
+}
+window.addEventListener('laod', init);

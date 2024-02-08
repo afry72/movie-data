@@ -8,7 +8,7 @@ function searchMovie() {
 /* fetch a youtube video/trailer using the provided movie title
  from input*/
 function getYouTubeVideo() {
-  const YOUTUBE_ENDPOINT = `https://www.googleapis.com/youtube/v3/search?q=${movieTitle}&key=${YOUTUBE_API_KEY}`;
+  const YOUTUBE_ENDPOINT = `https://www.googleapis.com/youtube/v3/search?q=${movieTitle}&key=${YOUTUBE_API_KEY}&part=snippet`;
 
   if (!movieTitle || movieTitle.trim().length === 0) {
     return;

@@ -56,4 +56,4 @@ function init() {
     const searchForm = document.getElementById('searchForm');
     searchForm.addEventListener('submit', handleSearch);
 }
-window.addEventListener('laod', init);
+window.addEventListener('load', init);

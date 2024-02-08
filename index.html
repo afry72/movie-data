@@ -9,87 +9,92 @@
 
 <body>
     <header>
-        <h1>Film Scout Powered by OMDB and Google</h1>
+
         <nav>
             <a href="#search">Search</a>
             <a href="#genres">Genres</a>
             <a href="#reviews">Reviews</a>
             <a href="#info">Info</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Film Scout</h1>
+        <h2>Powered by OMDB and Google</h2>
+        <section>
+            <section id="search" class=" ">
 
-            <main>
-                <section>
-                    <section id="search" class=" ">
-                        <h2>Search</h2>
-                        <div class="searcharea">
-                            <a href="URL" class="work-item">
-                                <div>
-                                    <h3> </h3>
-                                    <style>
-                                        body {
-                                            font-family: Arial, sans-serif;
-                                            margin: 0;
-                                            padding: 0;
-                                            display: flex;
-                                            flex-direction: column;
-                                            align-items: center;
-                                            justify-content: center;
-                                            height: 100vh;
-                                            background-color: #f4f4f4;
-                                        }
+                <div class="searcharea">
 
-                                        h1 {
-                                            margin-bottom: 20px;
-                                        }
+                    <div>
+                        <h3> </h3>
+                        <style>
+                            body {
+                                font-family: Arial, sans-serif;
+                                margin: 0;
+                                padding: 0;
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                justify-content: center;
+                                height: 100vh;
+                                background-color: #f4f4f4;
+                            }
 
-                                        #search-container {
-                                            display: flex;
-                                            flex-direction: column;
-                                            align-items: center;
-                                        }
+                            h1 {
+                                margin-bottom: 20px;
+                            }
 
-                                        #search-input {
-                                            width: 80%;
-                                            padding: 10px;
-                                            margin-bottom: 10px;
-                                        }
+                            #search-container {
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                            }
 
-                                        #search-button {
-                                            padding: 10px;
-                                            cursor: pointer;
-                                        }
+                            #search-input {
+                                width: 80%;
+                                padding: 10px;
+                                margin-bottom: 10px;
+                            }
 
-                                        #results-container {
-                                            margin-top: 20px;
-                                        }
-                                    </style>
-                                    </head>
+                            #search-button {
+                                padding: 10px;
+                                cursor: pointer;
+                            }
 
-                                    <body>
+                            #results-container {
+                                margin-top: 20px;
+                            }
+                        </style>
 
+                        <div id="search-container">
+                            <input type="text" id="search-input" placeholder="Enter a film name">
 
-                                        <div id="search-container">
-                                            <input type="text" id="search-input" placeholder="Enter a movie title">
-                                            <button id="search-button" onclick="searchMovies()">Search</button>
-                                        </div>
+                        </div>
 
-                                        <div id="results-container"></div>
+                        <div id="results-container"></div>
 
-                                        <script>
-                                            function searchMovies() {
-                                                var searchTerm = document.getElementById('search-input').value;
-                                                var resultsContainer = document.getElementById('results-container');
-                                                // Perform movie search using searchTerm
-                                                // Display the results in resultsContainer
-                                                resultsContainer.innerHTML = "<p>Results for '" + searchTerm + "' will be displayed here.</p>";
-                                            }
-                                        </script>
-
-
-
-
-
+                        <script>
+                            function searchMovies() {
+                                var searchTerm = document.getElementById('search-input').value;
+                                var resultsContainer = document.getElementById('results-container');
+                                // Perform movie search using searchTerm
+                                // Display the results in resultsContainer
+                                resultsContainer.innerHTML = "<p>Results for '" + searchTerm + "' will be displayed here.</p>";
+                            }
+                        </script>
+                    </div>
+                </div>
+            </section>
+        </section>
 
 
 
 
-                                    </body>
+
+
+
+
+</body>
+</body>
+
+</html>

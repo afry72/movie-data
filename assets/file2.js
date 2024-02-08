@@ -23,4 +23,4 @@ function searchMovie() {
             }
         })
         .catch(error => console.error('Error fetching data:', error));
-}
+} 

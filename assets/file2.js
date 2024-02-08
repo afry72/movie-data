@@ -31,18 +31,27 @@ function searchMovie() {
 function displaySearchResults(results) {
 
 }
+function saveSearchResultstoLocalStorage(query, results) {
+    const searchResults ={
+        query: query,
+        results: results
+    };
+    localStorage.setItem(query, JSON.stringify(searchResults));
+}
 function handleSearch(event) {
     event.preventDefault();
-    searchMovie();
-}
+    const query = document.getElementById('movieTitle').value.trim();
+    if (query ==='') {
+        return;
+    }
+    searchMovie(query);
+    .then(results => {
+        if (results) {
+            displaySearchResults(query, results);
+        }else {
 
-function saveSearchResultstoLocalStorage(query, results) {
-    localStorage.setItem(query, JSON.stringify(results));
-}
-
-function getSearchResultsFromLocalStorage(query) {
-    const cachedResults = localStorage.getItem(query);
-    return cachedResults ? JSON.parse(cachedResults) : null;
+        }
+    });
 }
 
 function init() {

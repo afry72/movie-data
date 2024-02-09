@@ -1,4 +1,4 @@
-const formEl = document.getElementById('form');
+const formEl = document.getElementById('searchForm');
 const resultsContainerEl = document.querySelector('#results-container');
 
 // render youtube localstorage data if there is any on page load/refresh

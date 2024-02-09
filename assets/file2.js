@@ -12,18 +12,18 @@ function searchMovie() {
     fetch(apiUrl)
         .then(response => response.json())
         .then(data => {
-            const movieDetailsContainer = document.getElementById('movieDetails');
             if(data.Response === "True") {
-                displaySearchResults(movieTitle,data);
-                saveSearchResultstoLocalStorage(movieTitle,data);
+                displaySearchResults(movieTitle, data);
+                saveSearchResultstoLocalStorage(movieTitle, data);
             } else {
+                const movieDetailsContainer = document.getElementById('movieDetails');
                 movieDetailsContainer.innerHTML = `<p>${data.Error}</p>`;
             }
         })
         .catch(error => console.error('Error fetching data:', error));
 }
 
-function displaySearchResults(movieTitle,data) {
+function displaySearchResults(movieTitle, data) {
     const movieDetailsContainer = document.getElementById('movieDetails');
     movieDetailsContainer.innerHTML = '';
 

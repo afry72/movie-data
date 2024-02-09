@@ -7,29 +7,39 @@ function searchMovie() {
     alert("Please enter movie title");
     return;
     }
-    const apiUrl = `http://www.omdbapi.com/?t=${encodeURIComponent(movieTitle)}&apikey=${apiKey}`;
+    const apiUrl = `https://www.omdbapi.com/?t=${encodeURIComponent(movieTitle)}&apikey=${apiKey}`;
 
     fetch(apiUrl)
         .then(response => response.json())
         .then(data => {
-            const movieDetailsContainer = document.getElementById('movieDetails');
             if(data.Response === "True") {
-                movieDetailsContainer.innerHTML = `
-                    <h2>${data.Title}</h2>
-                    <p><strong>Year:</strong> ${data.Year}</p>
-                    <p><strong>Genre:</strong> ${data.Genre}</p>
-                    <p><strong>Plot:</strong> ${data.Plot}</p>
-                    <p><strong>IMDb Rating:</strong> ${data.imdbRating}</p>
-                `;
+                displaySearchResults(movieTitle, data);
+                saveSearchResultstoLocalStorage(movieTitle, data);
             } else {
-                movieDetailsContainer.innerHTML = '<p>${data.Error}</p>';
+                const movieDetailsContainer = document.getElementById('movieDetails');
+                movieDetailsContainer.innerHTML = `<p>${data.Error}</p>`;
             }
         })
         .catch(error => console.error('Error fetching data:', error));
 }
 
-function displaySearchResults(results) {
+function displaySearchResults(movieTitle, data) {
+    const movieDetailsContainer = document.getElementById('movieDetails');
+    movieDetailsContainer.innerHTML = '';
 
+    if(data.Response === "True") {
+        const movieDetailsHTML = `
+            <h2>${data.Title}</h2>
+            <p><strong>Title:</strong> ${data.Title}</p>
+            <p><strong>Year:</strong> ${data.Year}</p>
+            <p><strong>Genre:</strong> ${data.Genre}</p>
+            <p><strong>Plot:</strong> ${data.Plot}</p>
+            <p><strong>IMDb Rating:</strong> ${data.imdbRating}</p>
+        `;
+        movieDetailsContainer.innerHTML = movieDetailsHTML;
+    } else {
+        movieDetailsContainer.innerHTML = `<p>${data.Error}</p>`;
+    }
 }
 function saveSearchResultstoLocalStorage(query, results) {
     const searchResults ={
@@ -40,18 +50,7 @@ function saveSearchResultstoLocalStorage(query, results) {
 }
 function handleSearch(event) {
     event.preventDefault();
-    const query = document.getElementById('movieTitle').value.trim();
-    if (query ==='') {
-        return;
-    }
-    searchMovie(query);
-    .then(results => {
-        if (results) {
-            displaySearchResults(query, results);
-        }else {
-
-        }
-    });
+    searchMovie();
 }
 
 function init() {

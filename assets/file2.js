@@ -29,7 +29,8 @@ function displaySearchResults(movieTitle, data) {
 
     if(data.response === "True") {
         const movieDetailsHTML = `
-            <h2>${data.Title}</h2>
+            <h2>${movie.Title}</h2>
+            <p><strong>Title:</strong> ${data.title}</p>
             <p><strong>Year:</strong> ${data.Year}</p>
             <p><strong>Genre:</strong> ${data.Genre}</p>
             <p><strong>Plot:</strong> ${data.Plot}</p>

@@ -6,6 +6,7 @@ function closeModal() {
   movieDetailsContainer.innerHTML = '';
 }
 
+// show error modal when movie title is not found or the form input is empty
 function showErrorModal(error) {
   const movieDetailsContainer = document.getElementById('movieDetails');
   const modalEl = document.createElement('div');
@@ -127,7 +128,7 @@ function render(url) {
   saveYoutubeData({ url });
 
   if (linkContainerEl !== null) {
-    linkContainerEl.innerHTML = '';
+    resultsContainerEl.innerHTML = '';
   }
 
   resultsContainerEl.appendChild(containerEl);

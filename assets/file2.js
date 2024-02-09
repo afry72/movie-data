@@ -1,10 +1,38 @@
 const apiKey = '23774e88';
 const resultsContainerEl = document.querySelector('#results-container');
+
+function closeModal() {
+  const movieDetailsContainer = document.getElementById('movieDetails');
+  movieDetailsContainer.innerHTML = '';
+}
+
+function showErrorModal(error) {
+  const movieDetailsContainer = document.getElementById('movieDetails');
+  const modalEl = document.createElement('div');
+  const modalContentEl = document.createElement('div');
+  const errorEl = document.createElement('p');
+  const buttonEl = document.createElement('button');
+
+  buttonEl.textContent = 'Close';
+  errorEl.textContent = error;
+
+  buttonEl.addEventListener('click', closeModal);
+
+  modalContentEl.appendChild(errorEl);
+  modalContentEl.appendChild(buttonEl);
+  modalEl.appendChild(modalContentEl);
+
+  modalEl.classList.add('modal');
+  modalContentEl.classList.add('modal-content');
+
+  movieDetailsContainer.appendChild(modalEl);
+}
+
 function searchMovie() {
   const movieTitle = document.getElementById('movieTitle').value.trim();
 
   if (movieTitle === '') {
-    alert('Please enter movie title');
+    showErrorModal('Please enter movie title');
     return;
   }
   const apiUrl = `https://www.omdbapi.com/?t=${encodeURIComponent(movieTitle)}&apikey=${apiKey}`;
@@ -17,8 +45,7 @@ function searchMovie() {
         saveSearchResultstoLocalStorage(movieTitle, data);
         getYouTubeData(movieTitle);
       } else {
-        const movieDetailsContainer = document.getElementById('movieDetails');
-        movieDetailsContainer.innerHTML = `<p>${data.Error}</p>`;
+        showErrorModal(data.Error);
       }
     })
     .catch((error) => console.error('Error fetching data:', error));

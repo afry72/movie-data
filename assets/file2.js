@@ -7,7 +7,7 @@ function searchMovie() {
     alert("Please enter movie title");
     return;
     }
-    const apiUrl = `http://www.omdbapi.com/?t=${encodeURIComponent(movieTitle)}&apikey=${apiKey}`;
+    const apiUrl = `https://www.omdbapi.com/?t=${encodeURIComponent(movieTitle)}&apikey=${apiKey}`;
 
     fetch(apiUrl)
         .then(response => response.json())
@@ -27,10 +27,10 @@ function displaySearchResults(movieTitle, data) {
     const movieDetailsContainer = document.getElementById('movieDetails');
     movieDetailsContainer.innerHTML = '';
 
-    if(data.response === "True") {
+    if(data.Response === "True") {
         const movieDetailsHTML = `
-            <h2>${movie.Title}</h2>
-            <p><strong>Title:</strong> ${data.title}</p>
+            <h2>${data.Title}</h2>
+            <p><strong>Title:</strong> ${data.Title}</p>
             <p><strong>Year:</strong> ${data.Year}</p>
             <p><strong>Genre:</strong> ${data.Genre}</p>
             <p><strong>Plot:</strong> ${data.Plot}</p>

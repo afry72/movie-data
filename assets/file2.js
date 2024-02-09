@@ -21,6 +21,8 @@ function searchMovie() {
                     <p><strong>Plot:</strong> ${data.Plot}</p>
                     <p><strong>IMDb Rating:</strong> ${data.imdbRating}</p>
                 `;
+                saveSearchResultstoLocalStorage(movieTitle, data);
+                displaySearchResults(data);
             } else {
                 movieDetailsContainer.innerHTML = '<p>${data.Error}</p>';
             }
@@ -40,18 +42,7 @@ function saveSearchResultstoLocalStorage(query, results) {
 }
 function handleSearch(event) {
     event.preventDefault();
-    const query = document.getElementById('movieTitle').value.trim();
-    if (query ==='') {
-        return;
-    }
-    searchMovie(query);
-    .then(results => {
-        if (results) {
-            displaySearchResults(query, results);
-        }else {
-
-        }
-    });
+    searchMovie();
 }
 
 function init() {

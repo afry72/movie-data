@@ -35,6 +35,7 @@ function displaySearchResults(movieTitle, data) {
             <p><strong>Genre:</strong> ${data.Genre}</p>
             <p><strong>Plot:</strong> ${data.Plot}</p>
             <p><strong>IMDb Rating:</strong> ${data.imdbRating}</p>
+            <img src="${data.Poster}" alt="Movie Poster">
         `;
         movieDetailsContainer.innerHTML = movieDetailsHTML;
     } else {

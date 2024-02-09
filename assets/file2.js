@@ -14,24 +14,31 @@ function searchMovie() {
         .then(data => {
             const movieDetailsContainer = document.getElementById('movieDetails');
             if(data.Response === "True") {
-                movieDetailsContainer.innerHTML = `
-                    <h2>${data.Title}</h2>
-                    <p><strong>Year:</strong> ${data.Year}</p>
-                    <p><strong>Genre:</strong> ${data.Genre}</p>
-                    <p><strong>Plot:</strong> ${data.Plot}</p>
-                    <p><strong>IMDb Rating:</strong> ${data.imdbRating}</p>
-                `;
-                saveSearchResultstoLocalStorage(movieTitle, data);
-                displaySearchResults(data);
+                displaySearchResults(movieTitle,data);
+                saveSearchResultstoLocalStorage(movieTitle,data);
             } else {
-                movieDetailsContainer.innerHTML = '<p>${data.Error}</p>';
+                movieDetailsContainer.innerHTML = `<p>${data.Error}</p>`;
             }
         })
         .catch(error => console.error('Error fetching data:', error));
 }
 
-function displaySearchResults(results) {
+function displaySearchResults(movieTitle,data) {
+    const movieDetailsContainer = document.getElementById('movieDetails');
+    movieDetailsContainer.innerHTML = '';
 
+    if(data.response === "True") {
+        const movieDetailsHTML = `
+            <h2>${data.Title}</h2>
+            <p><strong>Year:</strong> ${data.Year}</p>
+            <p><strong>Genre:</strong> ${data.Genre}</p>
+            <p><strong>Plot:</strong> ${data.Plot}</p>
+            <p><strong>IMDb Rating:</strong> ${data.imdbRating}</p>
+        `;
+        movieDetailsContainer.innerHTML = movieDetailsHTML;
+    } else {
+        movieDetailsContainer.innerHTML = `<p>${data.Error}</p>`;
+    }
 }
 function saveSearchResultstoLocalStorage(query, results) {
     const searchResults ={

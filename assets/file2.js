@@ -57,15 +57,7 @@ function displaySearchResults(movieTitle, data) {
   movieDetailsContainer.innerHTML = '';
 
   if (data.Response === 'True') {
-    const movieDetailsHTML = `
-            <h2>${data.Title}</h2>
-            <p><strong>Title:</strong> ${data.Title}</p>
-            <p><strong>Year:</strong> ${data.Year}</p>
-            <p><strong>Genre:</strong> ${data.Genre}</p>
-            <p><strong>Plot:</strong> ${data.Plot}</p>
-            <p><strong>IMDb Rating:</strong> ${data.imdbRating}</p>
-            <img src="${data.Poster}" alt="Movie Poster">
-        `;
+    const movieDetailsHTML = constructMovieDetails(data);
     movieDetailsContainer.innerHTML = movieDetailsHTML;
   } else {
     movieDetailsContainer.innerHTML = `<p>${data.Error}</p>`;
@@ -76,16 +68,42 @@ function saveSearchResultstoLocalStorage(query, results) {
     query: query,
     results: results,
   };
-  localStorage.setItem(query, JSON.stringify(searchResults));
+  localStorage.setItem('movie', JSON.stringify(searchResults));
 }
 function handleSearch(event) {
   event.preventDefault();
   searchMovie();
 }
 
+function constructMovieDetails(data) {
+  const movieDetailsHTML = `
+            <h2>${data.Title}</h2>
+            <p><strong>Title:</strong> ${data.Title}</p>
+            <p><strong>Year:</strong> ${data.Year}</p>
+            <p><strong>Genre:</strong> ${data.Genre}</p>
+            <p><strong>Plot:</strong> ${data.Plot}</p>
+            <p><strong>IMDb Rating:</strong> ${data.imdbRating}</p>
+            <img src="${data.Poster}" alt="Movie Poster">
+        `;
+  return movieDetailsHTML;
+}
+
+function renderMovieData() {
+  const movieDetailsContainer = document.getElementById('movieDetails');
+  let data = JSON.parse(localStorage.getItem('movie')) ?? {};
+  if (Object.keys(data).length) {
+    movieDetailsContainer.innerHTML = '';
+
+    data = data.results;
+
+    movieDetailsContainer.innerHTML = constructMovieDetails(data);
+  }
+}
+
 function init() {
   const searchForm = document.getElementById('searchForm');
   searchForm.addEventListener('submit', handleSearch);
+  renderMovieData();
   renderYoutubeData();
 }
 window.addEventListener('load', init);

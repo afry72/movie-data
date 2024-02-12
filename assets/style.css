@@ -60,6 +60,11 @@ button {
   background-color: var(--secondarycolor);
 }
 
+#devider {
+  color: var(--secondarycolor);
+  size: 10p;
+}
+
 #results-container {
   margin-top: 20px;
 }

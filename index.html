@@ -4,46 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Film Scout</title>
-    <!--Pure CSS link goes here-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/base-min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
     <link rel="stylesheet" href="./assets/style.css">
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        background-color: #f4f4f4;
-      }
-
-      h1 {
-        margin-bottom: 20px;
-      }
-
-      #search-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-
-      #search-input {
-        width: 80%;
-        padding: 10px;
-        margin-bottom: 10px;
-      }
-
-      #search-button {
-        padding: 10px;
-        cursor: pointer;
-      }
-
-      #results-container {
-        margin-top: 20px;
-      }
-    </style>
   </head>
 
   <body>
@@ -68,6 +31,7 @@
                   <input type="text" id="movieTitle" placeholder="Enter movie title" />
                   <button type="submit">Search</button>
                 </form>
+                <hr style="width:100%;text-align:left;margin-left:0;background-color:#f7b72b">
                 <div id="movieDetails"></div>
               </div>
 

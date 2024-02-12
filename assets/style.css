@@ -1,3 +1,74 @@
+:root {
+  --backgroundcolor: #222121;
+  --secondarycolor: #f7b72b;
+}
+
+* {
+  color: white;
+
+}
+
+* a {
+  text-decoration: none;
+  color: var(--backgroundcolor);
+  background-color: var(--secondarycolor);
+  border: solid var(--backgroundcolor);
+  padding: 1px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: var(--backgroundcolor);
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: var(--secondarycolor);
+}
+
+#search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#search-input {
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 10px;
+  color: var(--backgroundcolor);
+}
+
+#movieTitle {
+  color: var(--backgroundcolor);
+}
+
+#search-button {
+  padding: 10px;
+  cursor: pointer;
+}
+
+button {
+  color: var(--backgroundcolor);
+  background-color: var(--secondarycolor);
+}
+
+#devider {
+  color: var(--secondarycolor);
+  size: 10p;
+}
+
+#results-container {
+  margin-top: 20px;
+}
+
 .modal {
   top: 0;
   left: 0;

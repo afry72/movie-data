@@ -167,7 +167,7 @@ function displayYouTubeData(data) {
  from input*/
 function getYouTubeData(searchValue) {
   const YOUTUBE_API_KEY = 'AIzaSyCHBumtJUZPMDbHVLiIxIlCfNChMjaUTGk';
-  const YOUTUBE_ENDPOINT = `https://www.googleapis.com/youtube/v3/search?q=${searchValue}&key=${YOUTUBE_API_KEY}&part=snippet`;
+  const YOUTUBE_ENDPOINT = `https://www.googleapis.com/youtube/v3/search?q=${searchValue}-trailer&key=${YOUTUBE_API_KEY}&part=snippet`;
 
   fetch(YOUTUBE_ENDPOINT)
     .then(function (res) {

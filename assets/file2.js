@@ -80,12 +80,12 @@ function handleSearch(event) {
 function constructMovieDetails(data) {
   const movieDetailsHTML = `
             <h2>${data.Title}</h2>
-            <p><strong>Title:</strong> ${data.Title}</p>
-            <p><strong>Year:</strong> ${data.Year}</p>
-            <p><strong>Genre:</strong> ${data.Genre}</p>
-            <p><strong>Plot:</strong> ${data.Plot}</p>
-            <p><strong>IMDb Rating:</strong> ${data.imdbRating}</p>
-            <img src="${data.Poster}" alt="Movie Poster">
+            <p class="pure-u-1-6"><strong>Title:</strong> ${data.Title}</p>
+            <p class="pure-u-1-6"><strong>Year:</strong> ${data.Year}</p>
+            <p class="pure-u-1-6"><strong>Genre:</strong> ${data.Genre}</p>
+            <p class="pure-u-1-6"><strong>IMDb Rating:</strong> ${data.imdbRating}</p>
+            <img src="${data.Poster}" alt="Movie Poster" class="pure-u-1-4">
+            <p class="pure-u-1-6"><strong>Plot:</strong> ${data.Plot}</p>
         `;
   return movieDetailsHTML;
 }

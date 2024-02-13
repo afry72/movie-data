@@ -47,6 +47,7 @@ function searchMovie() {
         getYouTubeData(movieTitle);
       } else {
         showErrorModal(data.Error);
+        resultsContainerEl.innerHTML = '';
       }
     })
     .catch((error) => console.error('Error fetching data:', error));

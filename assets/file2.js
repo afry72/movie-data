@@ -34,6 +34,7 @@ function searchMovie() {
 
   if (movieTitle === '') {
     showErrorModal('Please enter movie title');
+    resultsContainerEl.innerHTML = '';
     return;
   }
   const apiUrl = `https://www.omdbapi.com/?t=${encodeURIComponent(movieTitle)}&apikey=${apiKey}`;

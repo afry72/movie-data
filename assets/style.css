@@ -30,7 +30,7 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-image: linear-gradient(to left,#222121, #000);
+  background-image: linear-gradient(to left, #222121, #000);
 }
 
 h1 {

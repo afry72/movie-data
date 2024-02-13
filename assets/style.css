@@ -26,7 +26,7 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-image: linear-gradient(to left,#222121, #000);
+  background-image: linear-gradient(to left, #222121, #000);
 }
 
 h1 {
@@ -85,7 +85,7 @@ strong {
 .modal-content {
   width: 300px;
   border-radius: 8px;
-  background-color: var(--modalcolor)
+  background-color: var(--modalcolor);
   display: flex;
   flex-direction: column;
   align-items: center;

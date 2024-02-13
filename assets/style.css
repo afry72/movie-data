@@ -85,7 +85,7 @@ strong {
 .modal-content {
   width: 300px;
   border-radius: 8px;
-  background-color: var(--modalcolor)
+  background-color: var(--modalcolor);
   display: flex;
   flex-direction: column;
   align-items: center;

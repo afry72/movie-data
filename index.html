@@ -1,48 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Film Scout</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/base-min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
     <link rel="stylesheet" href="./assets/style.css">
-  </head>
+</head>
 
-  <body>
+<body>
     <header>
-      <nav>
-        <a href="#search">Search</a>
-        <a href="#genres">Genres</a>
-        <a href="#reviews">Reviews</a>
-        <a href="#info">Info</a>
-      </nav>
+        <nav>
+            <a href="#search">Search</a>
+            <a href="#genres">Genres</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#info">Info</a>
+        </nav>
     </header>
     <main>
-      <h1>Film Scout</h1>
-      <h2>Powered by OMDB and Google</h2>
-      <section class="container">
-        <section id="search" class=" ">
-          <div class="searcharea">
-            <div>
-              <h3></h3>
-              <div id="search-container">
-                <form id="searchForm">
-                  <input type="text" id="movieTitle" placeholder="Enter movie title" />
-                  <button type="submit">Search</button>
-                </form>
-                <hr style="width:100%;text-align:left;margin-left:0;background-color:#f7b72b">
-                <div id="movieDetails"></div>
-              </div>
+        <h1><a href="https://afry72.github.io/movie-data/">Film Scout</a></h1>
+        <h2>Powered by OMDB and Google</h2>
+        <section class="container">
+            <section id="search" class=" ">
+                <div class="searcharea">
+                    <div>
+                        <h3></h3>
+                        <div id="search-container">
+                            <form id="searchForm">
+                                <input type="text" id="movieTitle" placeholder="Enter movie title" />
+                                <button type="submit">Search</button>
+                            </form>
+                            <hr style="width:100%;text-align:left;margin-left:0;background-color:#f7b72b">
+                            <div id="movieDetails"></div>
+                        </div>
 
-              <div id="results-container">
-              </div>
+                        <div id="results-container">
+                        </div>
 
-              <script src="./assets/file2.js"></script>
+                        <script src="./assets/file2.js"></script>
 
-          </div>
+                    </div>
+            </section>
         </section>
-      </section>
     </main>
-  </body>
+</body>
+
 </html>

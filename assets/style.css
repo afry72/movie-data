@@ -17,6 +17,10 @@
   padding: 1px;
 }
 
+header {
+  margin-top: 2%;
+}
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;

@@ -6,6 +6,13 @@
 
 <img width="600" alt="film_scout_screenshot" src="https://github.com/afry72/movie-data/assets/29121238/cae07714-01b3-4442-a9cb-491c6e92112e">
 
+### Technologies Used
+
+- HTML5
+- Pure CSS Framework
+- JavaScript
+- OMBDb API
+- Youtube API
 
 ### Description
 
